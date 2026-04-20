@@ -16,6 +16,7 @@ class Settings:
     discord_bot_token: str
     discord_application_id: int | None
     discord_guild_id: int | None
+    discord_sync_commands_on_startup: bool
     raw_data_dir: Path
     processed_data_dir: Path
     artifacts_dir: Path
@@ -41,11 +42,16 @@ def get_settings() -> Settings:
 
     discord_application_id = os.getenv("DISCORD_APPLICATION_ID", "").strip() or None
     discord_guild_id = os.getenv("DISCORD_GUILD_ID", "").strip() or None
+    discord_sync_commands_on_startup = os.getenv(
+        "DISCORD_SYNC_COMMANDS_ON_STARTUP",
+        "false",
+    ).strip().lower() in {"1", "true", "yes", "on"}
 
     return Settings(
         discord_bot_token=os.getenv("DISCORD_BOT_TOKEN") or os.getenv("DISCORD_TOKEN", ""),
         discord_application_id=int(discord_application_id) if discord_application_id else None,
         discord_guild_id=int(discord_guild_id) if discord_guild_id else None,
+        discord_sync_commands_on_startup=discord_sync_commands_on_startup,
         raw_data_dir=raw_data_dir,
         processed_data_dir=processed_data_dir,
         artifacts_dir=artifacts_dir,

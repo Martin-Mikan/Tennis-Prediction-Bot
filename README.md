@@ -45,7 +45,7 @@ tennis-bot-invite
 
 7. Open the printed URL and add the bot to your Discord server.
 
-If `DISCORD_GUILD_ID` is set, commands are synced to that development server on startup for faster iteration. If it is left empty, commands are synced globally.
+If `DISCORD_GUILD_ID` is set, commands are synced to that development server on startup for faster iteration. In production, automatic global sync is disabled by default to avoid unnecessary Discord API traffic. If you ever need a one-time forced global sync, set `DISCORD_SYNC_COMMANDS_ON_STARTUP=true` for that deploy only.
 
 ## Train The Model
 

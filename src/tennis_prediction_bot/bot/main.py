@@ -46,8 +46,15 @@ class TennisPredictionBot(commands.Bot):
             )
             return
 
-        synced = await self.tree.sync()
-        LOGGER.info("Synced %s global commands.", len(synced))
+        if self.settings.discord_sync_commands_on_startup:
+            synced = await self.tree.sync()
+            LOGGER.info("Synced %s global commands.", len(synced))
+            return
+
+        LOGGER.info(
+            "Skipping automatic global command sync on startup. "
+            "Set DISCORD_SYNC_COMMANDS_ON_STARTUP=true for a one-time forced sync."
+        )
 
 
 def _validate_runtime_files(*paths: Path) -> None:
