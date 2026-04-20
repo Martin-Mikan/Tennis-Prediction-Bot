@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: tennis-prediction-bot
+    runtime: python
+    plan: starter
+    buildCommand: pip install -e .
+    startCommand: tennis-bot-run
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO

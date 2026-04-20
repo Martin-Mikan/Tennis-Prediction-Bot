@@ -1,0 +1,6 @@
+{
+  "cleaned_match_rows": 72274,
+  "feature_rows": 144548,
+  "player_snapshots": 2632,
+  "best_model_name": "lightgbm"
+}

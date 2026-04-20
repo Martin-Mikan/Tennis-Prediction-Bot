@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: tennis-prediction-bot
+Version: 0.1.0
+Summary: Discord bot for ATP main-tour winner prediction with confidence scores.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: discord.py<3.0,>=2.4
+Requires-Dist: joblib<2.0,>=1.4
+Requires-Dist: numpy<3.0,>=1.26
+Requires-Dist: pandas<3.0,>=2.2
+Requires-Dist: python-dotenv<2.0,>=1.0
+Requires-Dist: scikit-learn<2.0,>=1.5
+Provides-Extra: dev
+Requires-Dist: pytest<10.0,>=8.0; extra == "dev"
+
+# Tennis Prediction Bot
+
+A brand-new Python project for training an ATP main-tour tennis match predictor and serving predictions through a Discord slash-command bot.
+
+## What It Does
+
+- Cleans Jeff Sackmann ATP raw CSV files from `raw data`
+- Builds pre-match features without future leakage
+- Trains two models:
+  - logistic regression baseline
+  - calibrated gradient-boosted tree model
+- Saves the best model, evaluation metrics, and feature metadata
+- Exposes Discord slash commands:
+  - `/predict`
+  - `/player`
+  - `/model_info`
+  - `/health`
+
+## Setup
+
+1. Install Python 3.11+.
+2. Create and activate a virtual environment.
+3. Install the package:
+
+```bash
+pip install -e .[dev]
+```
+
+4. Copy `.env.example` to `.env` and set your Discord token.
+
+## Train The Model
+
+```bash
+tennis-bot-train
+```
+
+## Run The Discord Bot
+
+```bash
+tennis-bot-run
+```
+
+## Notes
+
+- v1 intentionally excludes challengers, qualifying, futures, and amateur events
+- predictions are statistical estimates, not guarantees
+- raw data attribution: Jeff Sackmann / Tennis Abstract

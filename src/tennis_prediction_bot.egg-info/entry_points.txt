@@ -1,0 +1,3 @@
+[console_scripts]
+tennis-bot-run = tennis_prediction_bot.bot.main:main
+tennis-bot-train = tennis_prediction_bot.modeling.train:main

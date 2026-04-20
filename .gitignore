@@ -1,0 +1,19 @@
+.env
+.venv/
+.pytest_cache/
+.pytest-tmp/
+__pycache__/
+*.py[cod]
+*.log
+pytest-cache-files-*/
+
+raw data/
+processed_data/*
+!processed_data/cleaned_matches.csv
+!processed_data/player_snapshots.csv
+
+artifacts/*
+!artifacts/best_model.joblib
+!artifacts/model_metadata.json
+!artifacts/evaluation_metrics.json
+!artifacts/training_summary.json

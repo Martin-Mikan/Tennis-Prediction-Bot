@@ -1,0 +1,44 @@
+{
+  "logistic_regression": {
+    "validation": {
+      "accuracy": 0.6556158152554233,
+      "roc_auc": 0.7216812125711481,
+      "log_loss": 0.6123937633110985,
+      "brier_score": 0.21251541122684076
+    },
+    "test": {
+      "accuracy": 0.6511940800538177,
+      "roc_auc": 0.7223901762346148,
+      "log_loss": 0.6080209903886646,
+      "brier_score": 0.21156856656777098
+    }
+  },
+  "calibrated_hist_gradient_boosting": {
+    "validation": {
+      "accuracy": 0.6675122463261022,
+      "roc_auc": 0.7343575006574306,
+      "log_loss": 0.6014257750851566,
+      "brier_score": 0.20803461375722454
+    },
+    "test": {
+      "accuracy": 0.6543895055499496,
+      "roc_auc": 0.730808920603856,
+      "log_loss": 0.6023719857268961,
+      "brier_score": 0.2089626169133832
+    }
+  },
+  "lightgbm": {
+    "validation": {
+      "accuracy": 0.6674247725682295,
+      "roc_auc": 0.7344791620246607,
+      "log_loss": 0.600828346423545,
+      "brier_score": 0.20791706397069284
+    },
+    "test": {
+      "accuracy": 0.6528758829465187,
+      "roc_auc": 0.7307626469823886,
+      "log_loss": 0.6017456828756789,
+      "brier_score": 0.20886199428257837
+    }
+  }
+}

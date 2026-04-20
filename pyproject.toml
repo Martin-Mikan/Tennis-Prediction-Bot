@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tennis-prediction-bot"
+version = "0.1.0"
+description = "Discord bot for ATP main-tour winner prediction with confidence scores."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "discord.py>=2.4,<3.0",
+  "joblib>=1.4,<2.0",
+  "lightgbm>=4.6,<5.0",
+  "numpy>=1.26,<3.0",
+  "pandas>=2.2,<3.0",
+  "python-dotenv>=1.0,<2.0",
+  "scikit-learn>=1.5,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<10.0"]
+
+[project.scripts]
+tennis-bot-train = "tennis_prediction_bot.modeling.train:main"
+tennis-bot-run = "tennis_prediction_bot.bot.main:main"
+tennis-bot-invite = "tennis_prediction_bot.bot.invite:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,121 @@
+{
+  "best_model_name": "lightgbm",
+  "metrics": {
+    "logistic_regression": {
+      "validation": {
+        "accuracy": 0.6556158152554233,
+        "roc_auc": 0.7216812125711481,
+        "log_loss": 0.6123937633110985,
+        "brier_score": 0.21251541122684076
+      },
+      "test": {
+        "accuracy": 0.6511940800538177,
+        "roc_auc": 0.7223901762346148,
+        "log_loss": 0.6080209903886646,
+        "brier_score": 0.21156856656777098
+      }
+    },
+    "calibrated_hist_gradient_boosting": {
+      "validation": {
+        "accuracy": 0.6675122463261022,
+        "roc_auc": 0.7343575006574306,
+        "log_loss": 0.6014257750851566,
+        "brier_score": 0.20803461375722454
+      },
+      "test": {
+        "accuracy": 0.6543895055499496,
+        "roc_auc": 0.730808920603856,
+        "log_loss": 0.6023719857268961,
+        "brier_score": 0.2089626169133832
+      }
+    },
+    "lightgbm": {
+      "validation": {
+        "accuracy": 0.6674247725682295,
+        "roc_auc": 0.7344791620246607,
+        "log_loss": 0.600828346423545,
+        "brier_score": 0.20791706397069284
+      },
+      "test": {
+        "accuracy": 0.6528758829465187,
+        "roc_auc": 0.7307626469823886,
+        "log_loss": 0.6017456828756789,
+        "brier_score": 0.20886199428257837
+      }
+    }
+  },
+  "numeric_columns": [
+    "player_rank",
+    "opponent_rank",
+    "rank_diff",
+    "player_rank_points",
+    "opponent_rank_points",
+    "rank_points_diff",
+    "player_age",
+    "opponent_age",
+    "age_diff",
+    "player_height",
+    "opponent_height",
+    "height_diff",
+    "player_elo",
+    "opponent_elo",
+    "elo_diff",
+    "player_surface_elo",
+    "opponent_surface_elo",
+    "surface_elo_diff",
+    "player_matches_before",
+    "opponent_matches_before",
+    "player_win_rate",
+    "opponent_win_rate",
+    "recent_form_diff",
+    "player_recent_win_rate",
+    "opponent_recent_win_rate",
+    "player_surface_win_rate",
+    "opponent_surface_win_rate",
+    "surface_win_rate_diff",
+    "h2h_wins",
+    "h2h_losses",
+    "h2h_diff"
+  ],
+  "categorical_columns": [
+    "surface",
+    "tourney_level",
+    "player_hand",
+    "opponent_hand",
+    "handedness_matchup"
+  ],
+  "train_rows": 127170,
+  "validation_rows": 11432,
+  "test_rows": 5946,
+  "train_seasons": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "validation_seasons": [
+    2022,
+    2023
+  ],
+  "test_seasons": [
+    2024
+  ]
+}
