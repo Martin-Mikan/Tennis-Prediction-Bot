@@ -1,5 +1,7 @@
 discord.py<3.0,>=2.4
+flask<4.0,>=3.0
 joblib<2.0,>=1.4
+lightgbm<5.0,>=4.6
 numpy<3.0,>=1.26
 pandas<3.0,>=2.2
 python-dotenv<2.0,>=1.0

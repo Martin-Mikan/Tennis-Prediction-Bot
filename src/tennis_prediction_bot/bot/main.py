@@ -11,6 +11,7 @@ from tennis_prediction_bot.config.settings import configure_logging, get_setting
 from tennis_prediction_bot.bot.invite import build_invite_url
 from tennis_prediction_bot.services.predictor import PredictionService
 from tennis_prediction_bot.utils.io import read_json
+from tennis_prediction_bot.webserver import keep_alive
 
 
 LOGGER = logging.getLogger(__name__)
@@ -180,6 +181,7 @@ def main() -> None:
     settings = get_settings()
     if not settings.discord_bot_token:
         raise RuntimeError("DISCORD_BOT_TOKEN is missing. Set it in your environment or .env file.")
+    keep_alive()
     bot = build_bot()
     bot.run(settings.discord_bot_token)
 

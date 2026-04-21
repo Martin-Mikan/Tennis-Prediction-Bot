@@ -67,6 +67,33 @@ Before running the bot, make sure training has already generated:
 
 The bot now validates those files at startup and will stop with a clear error if they are missing.
 
+## Render Web Service With Uptime Robot
+
+If you want to run this as a Render Web Service instead of a background worker, the project now includes a tiny Flask server for `/` and `/health`.
+
+How it works:
+
+- If Render provides `PORT`, the Flask keep-alive server starts automatically
+- The Discord bot still runs in the same process
+- You can point Uptime Robot at the Render URL to keep the free web service warm
+
+Recommended Render Web Service settings:
+
+- Build Command: `pip install .`
+- Start Command: `python -m tennis_prediction_bot.bot.main`
+
+Recommended environment variables:
+
+- `DISCORD_TOKEN`
+- `LOG_LEVEL=INFO`
+- `DISCORD_SYNC_COMMANDS_ON_STARTUP=false`
+
+Optional local override:
+
+- `ENABLE_HTTP_SERVER=true`
+
+Uptime Robot can ping either `/` or `/health`.
+
 ## GitHub To Render
 
 Yes, the intended deployment flow is:
