@@ -8,7 +8,19 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+def _resolve_project_root() -> Path:
+    env_root = os.getenv("TENNIS_BOT_PROJECT_ROOT", "").strip()
+    if env_root:
+        return Path(env_root)
+
+    cwd = Path.cwd()
+    if (cwd / "pyproject.toml").exists():
+        return cwd
+
+    return Path(__file__).resolve().parents[3]
+
+
+PROJECT_ROOT = _resolve_project_root()
 
 
 @dataclass(slots=True)
