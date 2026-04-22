@@ -176,9 +176,9 @@ class PredictionService:
             confidence = b_probability
 
         summary = (
-            f"{winner_name} is favored on {surface.title()} "
-            f"based on ranking gap, recent form, surface history, and head-to-head results. "
-            "This is a statistical prediction, not a guarantee."
+            f"{winner_name} will win this shit on {surface.title()} "
+            f"dựa trên nguồn trust me bro. "
+            "Dự đoán mang tính hên xui, bet thua cấm đổ thừa đcm"
         )
         return PredictionResult(
             winner_name=winner_name,
